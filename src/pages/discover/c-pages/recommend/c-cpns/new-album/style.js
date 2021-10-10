@@ -6,7 +6,7 @@ export const AlbumWrapper = styled.div`
         height: 186px;
         background-color: #f5f5f5;
         border: 1px solid #d3d3d3;
-        margin-top: 20px;
+        margin-top: 22px;
         display: flex;
         align-items: center;
         .arrow{
@@ -23,12 +23,11 @@ export const AlbumWrapper = styled.div`
         .album{
             width: 640px;
             height: 150px;
+            padding-top: 15px;
             .page{
+                display: flex !important;
+                justify-content: space-around;
                 
-                
-                .page-item{
-                    display: flex;
-                }
             }
         }
     }

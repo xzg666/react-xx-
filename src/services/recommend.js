@@ -26,3 +26,13 @@ export function getNewAlbum(limit){
         }
     })
 }
+
+//榜单
+export function getTopList(idx){
+    return requset({
+        url:'/top/list',
+        params:{
+            idx
+        }
+    })
+}
