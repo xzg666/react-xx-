@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+//导入react相关
+import React, { memo,useEffect } from 'react'
+import { renderRoutes } from 'react-router-config'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+//导入网络请求，actionCreators，utils
+import routes from './route'
+import store from './store'
 
-function App() {
+//导入组件
+import HYAppHeader from 'components/app-header'
+import HYAppFooter from 'components/app-footer'
+
+
+
+export default memo(function App() {
+  useEffect(() => {
+    console.log('store',store.getState())
+   
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+    <Provider store={store}>
+      <BrowserRouter>
+        <HYAppHeader />
+        {renderRoutes(routes)}
+        <HYAppFooter />
+      </BrowserRouter>
+    </Provider>
+  )
+})
