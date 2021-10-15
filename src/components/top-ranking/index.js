@@ -38,7 +38,7 @@ export default memo(function HYTopRankings(props) {
                         )
                     })
                 }
-                <a href="" className="all">
+                <a href="/" className="all">
                     查看全部 &gt;
                 </a>
             </div>
